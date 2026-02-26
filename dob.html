@@ -1,8 +1,11 @@
-<form>
-    Date of Birth:
-    <input type="text" size="2"> /
-    <input type="text" size="2"> /
-    <input type="text" size="4">
-    <br><br>
-    <input type="submit">
+<form id="registrationForm">
+  <fieldset>
+    <legend>Date of Birth</legend>
+    <input type="number" id="dd" placeholder="dd" min="1" max="31" required> /
+    <input type="number" id="mm" placeholder="mm" min="1" max="12" required> /
+    <input type="number" id="yyyy" placeholder="yyyy" min="1900" max="2016" required>
+  </fieldset>
+
+  <button type="submit">Submit</button>
+  <p id="error-message" style="color: red;"></p>
 </form>

@@ -1,5 +1,16 @@
-<form>
-    Name: <input type="text">
-    <br><br>
-    <input type="submit" value="Submit">
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Name Validation</title>
+</head>
+<body>
+    <form id="nameForm">
+        <label for="userName">Name</label><br>
+        <input type="text" id="userName" required>
+        <br><br>
+        <button type="submit">Submit</button>
+        <p id="error-message" style="color: red;"></p>
+    </form>
+    <script src="name-script.js"></script>
+</body>
+</html>
