@@ -2,27 +2,50 @@
 <html>
 <head><title>Task 2 - Email</title></head>
 <body>
-    <form onsubmit="return validateEmail()">
-        <label>Email:</label>
-        <input type="text" id="email" name="email">
-        <input type="submit" value="Submit">
-    </form>
+<form onsubmit="return validateEmail()">
 
-    <script>
-        function validateEmail() {
-            let email = document.getElementById('email').value.trim();
-            if (email === "") {
-                alert("Email cannot be empty.");
-                return false;
-            }
-            // Standard simple email regex
-            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert("Must be a valid email address.");
-                return false;
-            }
-            return true;
-        }
-    </script>
+<label>Email:</label>
+<input type="text" id="email" placeholder="sample@example.com">
+<input type="submit" value="Submit">
+
+</form>
+
+<script>
+function validateEmail() {
+
+    let email = document.getElementById("email").value.trim();
+
+    if(email === ""){
+        alert("Email cannot be empty");
+        return false;
+    }
+
+    if(email.indexOf(" ") !== -1){
+        alert("Email cannot contain spaces");
+        return false;
+    }
+
+    let at = email.indexOf("@");
+    let dot = email.lastIndexOf(".");
+
+    if(at <= 0){
+        alert("Invalid email format");
+        return false;
+    }
+
+    if(dot <= at + 1){
+        alert("Invalid email format");
+        return false;
+    }
+
+    if(dot === email.length - 1){
+        alert("Invalid email format");
+        return false;
+    }
+
+    return true;
+}
+</script>
+
 </body>
 </html>
